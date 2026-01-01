@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Media</title>
+  <style>
+    body.content {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f7f7;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .media-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h3 {
+      margin-top: 30px;
+      color: #333;
+    }
+
+    audio, video {
+      display: block;
+      margin: 10px 0;
+    }
+
+    .photo-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .photo-grid img {
+      width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .video-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .video-grid video {
+      width: 250px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    /* Tambahan untuk dokumen */
+    .document-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 25px;
+    }
+
+    .document-grid iframe {
+      width: 250px;
+      height: 350px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    /* Area fullscreen */
+    #pdf-viewer {
+      display: none; /* disembunyikan dulu */
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #pdf-viewer iframe {
+      width: 90%;
+      height: 90%;
+      border: none;
+      border-radius: 10px;
+      background: white;
+    }
+
+    .close-btn {
+      position: fixed;
+      top: 10px;
+      right: 25px;
+      color: white;
+      font-size: 35px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .close-btn:hover {
+      color: red;
+    }
+  </style>
+</head>
+<body class="content">
+  <h2>Media</h2>
+
+  <div class="media-content">
+
+    <h3>Voice</h3>
+    <audio controls>
+      <source src="oldhabits.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio controls>
+      <source src="fnafsl.mp3" type="audio/mpeg">
+    </audio>
+
+    <h3>Foto</h3>
+    <div class="photo-grid">
+      <img src="foto_di_gunung_bromo.jpg" alt="Foto di Gunung Bromo">
+      <img src="foto_tank_tempur_di_museum_angkut .jpg" alt="Foto tank tempur di Museum Angkut">
+      <img src="museum_angkut-Buck_series_40.jpg" alt="Foto di Museum Angkut">
+    </div>
+
+    <h3>Video</h3>
+    <div class="video-grid">
+      <video controls>
+        <source src="alan_walker-broken_angel.mp4" type="video/mp4">
+      </video>
+
+      <video controls>
+        <source src="alan_walker-killme_slowly.mp4" type="video/mp4">
+      </video>
+
+      <video controls>
+        <source src="fnaf4.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Bagian Dokumen -->
+    <h3>Dokumen</h3>
+    <div class="document-grid">
+      <iframe src="Tugas_Membuat_layout_Website_Dinamis.pdf"></iframe>
+      <iframe src="tugas_bu_wulan_P_14.pdf"></iframe>
+      <iframe src="Kelompok_5_P9._model_data[1].pdf"></iframe>
+    </div>
+
+  </div>
+
+  <!-- Tampilan fullscreen PDF -->
+  <div id="pdf-viewer">
+    <span class="close-btn" onclick="tutupPdf()"></span>
+    <iframe id="fullscreen-pdf"></iframe>
+  </div>
+
+  <script>
+    // Ambil semua iframe di bagian dokumen
+    let dokumen = document.querySelectorAll('.document-grid iframe');
+
+    // Ketika salah satu diklik
+    dokumen.forEach(function(pdf) {
+      pdf.onclick = function() {
+        // Ambil alamat PDF yang diklik
+        let alamat = pdf.getAttribute('src');
+        // Tampilkan fullscreen dengan PDF tersebut
+        document.getElementById('fullscreen-pdf').src = alamat;
+        document.getElementById('pdf-viewer').style.display = 'flex';
+      };
+    });
+
+    // Tutup fullscreen saat tombol X ditekan
+    function tutupPdf() {
+      document.getElementById('pdf-viewer').style.display = 'none';
+      document.getElementById('fullscreen-pdf').src = '';
+    }
+  </script>
+</body>
+</html>

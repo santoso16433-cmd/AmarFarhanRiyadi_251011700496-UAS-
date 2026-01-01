@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile</title>
+  <style>
+    body.content {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    /* JUDUL */
+    h2 {
+      color: #333;
+      margin-bottom: 15px;
+      font-size: 28px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* FOTO PROFIL BULAT */
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #4caf50;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      margin-bottom: 10px;
+    }
+
+    /* INFORMASI PROFIL */
+    .profile-info {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .profile-header {
+      margin-top: 15px;
+      margin-bottom: 8px; /* ✅ dikurangi dari 15px jadi 8px supaya lebih dekat ke "Tentang Saya" */
+    }
+
+    .profile-header p {
+      margin: 3px 0; /* ✅ dikurangi jaraknya antar baris */
+      font-size: 16px;
+      color: #333;
+    }
+
+    .profile-header p span {
+      font-weight: bold;
+      color: #444;
+      margin-right: 5px;
+    }
+
+    /* Bagian "Tentang Saya" */
+    .about {
+      margin-top: 5px; /* ✅ kecil agar dekat dengan alamat */
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      margin-top: 15px;
+      color: #333;
+      border-bottom: 2px solid #4caf50;
+      display: inline-block;
+      padding-bottom: 4px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    /* Progress bar */
+    .rating-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 6px 0;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .rating-name {
+      font-weight: bold;
+      color: #444;
+      width: 130px;
+    }
+
+    .rating-bar {
+      background-color: #e0e0e0;
+      border-radius: 10px;
+      height: 10px;
+      width: 180px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rating-fill {
+      background-color: #4caf50;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    .rating-percent {
+      margin-left: 10px;
+      color: #333;
+      font-size: 14px;
+      width: 40px;
+      text-align: right;
+    }
+
+    /* Pendidikan */
+    .education-list {
+      margin-top: 10px;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .education-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fff;
+      padding: 8px 12px;
+      margin-bottom: 6px;
+      border-left: 4px solid #4caf50;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .edu-name {
+      font-weight: bold;
+      color: #333;
+    }
+
+    .edu-years {
+      font-size: 14px;
+      color: #555;
+    }
+
+    p, li {
+      color: #555;
+    }
+  </style>
+</head>
+<body class="content">
+  <!-- JUDUL PROFIL -->
+  <h2>Profil Saya</h2>
+
+  <!-- FOTO PROFIL -->
+  <img src="foto_waktu_kecil_farhan.jpeg" alt="Foto Saya" class="profile-photo">
+
+  <!-- INFORMASI PROFIL -->
+  <div class="profile-info">
+    <div class="profile-header">
+      <p><span>Nama:</span> Amar Farhan Riyadi</p>
+      <p><span>Email:</span> santoso16433@gmail.com</p>
+      <p><span>Telepon:</span> +62 813-2867-7858</p>
+      <p><span>Alamat:</span> Perumahan Grand Permata Sepatan, Blok AC No.3, Jalan Anggur 3, RT 07 / RW 12, Desa Pisangan Jaya, Kec. Sepatan, Kab. Tangerang, Banten</p>
+    </div>
+
+    <!-- Bagian Tentang Saya -->
+    <p class="about"><b>Tentang Saya:</b> Saya web developer dengan passion di bidang HTML, CSS, dan C++.</p>
+
+    <!-- SKILL -->
+    <h3>Skill</h3>
+    <ul>
+      <li class="rating-item">
+        <span class="rating-name">HTML & CSS</span>
+        <div class="rating-bar">
+          <div class="rating-fill" style="width: 95%;"></div>
+        </div>
+        <span class="rating-percent">95%</span>
+      </li>
+      <li class="rating-item">
+        <span class="rating-name">JavaScript</span>
+        <div class="rating-bar">
+          <div class="rating-fill" style="width: 70%;"></div>
+        </div>
+        <span class="rating-percent">70%</span>
+      </li>
+      <li class="rating-item">
+        <span class="rating-name">C++ / CPP</span>
+        <div class="rating-bar">
+          <div class="rating-fill" style="width: 96%;"></div>
+        </div>
+        <span class="rating-percent">96%</span>
+      </li>
+    </ul>
+
+    <!-- HOBI -->
+    <h3>Hobi</h3>
+    <ul>
+      <li class="rating-item">
+        <span class="rating-name">Berenang</span>
+        <div class="rating-bar">
+          <div class="rating-fill" style="width: 98%;"></div>
+        </div>
+        <span class="rating-percent">98%</span>
+      </li>
+      <li class="rating-item">
+        <span class="rating-name">Gaming</span>
+        <div class="rating-bar">
+          <div class="rating-fill" style="width: 100%;"></div>
+        </div>
+        <span class="rating-percent">100%</span>
+      </li>
+      <li class="rating-item">
+        <span class="rating-name">Touring / Jalan-jalan</span>
+        <div class="rating-bar">
+          <div class="rating-fill" style="width: 90%;"></div>
+        </div>
+        <span class="rating-percent">90%</span>
+      </li>
+    </ul>
+
+    <!-- PENDIDIKAN -->
+    <h3>Pendidikan</h3>
+    <div class="education-list">
+      <div class="education-item">
+        <span class="edu-name">SD Negeri 2 Sepatan</span>
+        <span class="edu-years">2013 - 2019</span>
+      </div>
+      <div class="education-item">
+        <span class="edu-name">SMP Negeri 1 Sepatan</span>
+        <span class="edu-years">2019 - 2022</span>
+      </div>
+      <div class="education-item">
+        <span class="edu-name">SMK Negeri 2 Sepatan</span>
+        <span class="edu-years">2022 - 2025</span>
+      </div>
+      <div class="education-item">
+        <span class="edu-name">Universitas Pamulang</span>
+        <span class="edu-years">2025 - Now</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
